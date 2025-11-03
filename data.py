@@ -26,6 +26,13 @@ class FAQ:
                         [MainPageLocators.question_button_7, MainPageLocators.answer_for_question_7, text_answer_7],
                         [MainPageLocators.question_button_8, MainPageLocators.answer_for_question_8, text_answer_8]]
 
+
 class ORDER_DATA:
     test_data_user_1=['Линкин', 'Парк', 'Москва', 'Сокольники', '89833545375', '20.11.2025', 'Зарядите пожалуйста']
-    test_data_user_2=['Радио', 'Рекорд', 'Балтийск', 'Красносельская','89327456318', '12.11.2025', 'Морская дискотека']
+    test_data_user_2=['Радио', 'Рекорд', 'Балтийск', 'Красносельская', '89327456318', '12.11.2025', 'Морская дискотека']
+
+
+class TITLE_DATA:
+    dzen_title_information ='Дзен — платформа для просмотра и создания контента. ' \
+                            'Вы всегда найдёте здесь то, что подходит именно вам: сотни тысяч авторов ежедневно делятся постами, ' \
+                            'статьями, видео и короткими роликами'

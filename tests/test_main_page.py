@@ -2,7 +2,6 @@ import allure
 import pytest
 from data import FAQ
 from pages.main_page import MainPage
-from locators.main_page_locators import MainPageLocators
 
 class TestMainPageFAQ:
     @allure.title('Проверка раздела "Вопросы о важном"')
@@ -12,6 +11,7 @@ class TestMainPageFAQ:
         main_page = MainPage(driver)
         main_page.wait_and_find_section_FAQ()
         main_page.scroll_to_section_FAQ()
+        main_page.wait_and_find_question(locator_of_question)
         main_page.click_on_question(locator_of_question)
         main_page.wait_and_find_answer_for_selected_question(locator_of_answer)
         assert main_page.get_text_of_answer(locator_of_answer) == text_of_answer
