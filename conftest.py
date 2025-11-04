@@ -1,5 +1,5 @@
 import pytest
-from curl import url
+from data import url
 from locators.base_page_locators import BasePageLocators
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC

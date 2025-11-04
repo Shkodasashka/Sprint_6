@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from data import ORDER_DATA
+
 
 class OrderPageLocators:
     #Локаторы полей для заполнения данных заказа в первой форме
@@ -27,5 +27,3 @@ class OrderPageLocators:
     CONFIRMATION_ORDER_BUTTON = (By.XPATH, "//button[contains(text(),'Да')]") #итоговая кнопка для оформления заказа
     CONFIRMATION_SUCCESS_ORDER = (By.XPATH, "//div[contains(text(),'Заказ оформлен')]") #окно подтверждения успешного выполнения заказа
     STATUS_ORDER_BUTTON = (By.XPATH, "//button[contains(text(),'Посмотреть статус')]") #итоговая кнопка для оформления заказа
-
-

@@ -1,5 +1,4 @@
 import allure
-from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from locators.base_page_locators import BasePageLocators
@@ -23,6 +22,11 @@ class BasePage:
     def click_on_element(self, locator):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(locator))
         self.driver.find_element(*locator).click()
+  
+    @allure.step('Клик на скрытый элемент')
+    def click_on_hidden_element(self, locator):
+        element = self.wait_and_find_element(locator)
+        self.driver.execute_script("arguments[0].click();", element)
 
     @allure.step('Получить текст элемента')
     def get_text_of_element(self, locator):
@@ -45,7 +49,7 @@ class BasePage:
     def switch_to_redirect_window(self):
         self.driver.switch_to.window(self.driver.window_handles[1])
 
-    @allure.step('Получение текущего адреса страницы')
+    @allure.step('Получение текущего титула страницы')
     def get_title_page(self, locator):
         WebDriverWait(self.driver, 10).until(EC.presence_of_all_elements_located(locator))
         return self.driver.title

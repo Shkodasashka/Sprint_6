@@ -1,6 +1,10 @@
 from locators.main_page_locators import MainPageLocators
 
 
+class url: #так как url используется только один раз в фикстуре, то логично не создавать для него отдельного файла
+    main_page = 'https://qa-scooter.praktikum-services.ru' #главная страница сервиса
+
+
 class FAQ:
     text_answer_1 = 'Сутки — 400 рублей. Оплата курьеру — наличными или картой.'
     text_answer_2 = 'Пока что у нас так: один заказ — один самокат. ' \

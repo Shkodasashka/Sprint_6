@@ -2,6 +2,7 @@ import allure
 from pages.base_page import BasePage
 from locators.order_page_locators import OrderPageLocators
 
+
 class OrderPage(BasePage):
     @allure.step('Ожидание появления и поиск заголовка первой формы для заполнения заказа')
     def wait_and_find_header_first_form_order(self):

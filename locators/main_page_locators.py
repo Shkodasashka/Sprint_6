@@ -12,7 +12,7 @@ class MainPageLocators:
     question_button_7 = [By.XPATH, "//div[@id='accordion__heading-6']"]
     question_button_8 = [By.XPATH, "//div[@id='accordion__heading-7']"]
     # Локаторы ответов на главной странице
-    answer_for_question_1 = [By.XPATH, "//div[@id='accordion__panel-0']/p"]
+    answer_for_question_1 = [By.XPATH, "//div[@id='accordion__panel-0']"]
     answer_for_question_2 = [By.XPATH, "//div[@id='accordion__panel-1']"]
     answer_for_question_3 = [By.XPATH, "//div[@id='accordion__panel-2']"]
     answer_for_question_4 = [By.XPATH, "//div[@id='accordion__panel-3']"]
