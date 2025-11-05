@@ -24,9 +24,13 @@ class BasePage:
         except Exception:
             pass
 
+    @allure.step('Ожидание загрузки элемента')
+    def wait_element(self, locator):
+        return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+
     @allure.step('Ожидание загрузки и поиск элемента')
     def wait_and_find_element(self, locator):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+        self.wait_element(locator)
         return self.driver.find_element(*locator)
 
     @allure.step('Скролл до элемента')
@@ -47,14 +51,6 @@ class BasePage:
     @allure.step('Ввести значение в поле ввода')
     def input_keys_in_field(self, locator, keys):
         return self.driver.find_element(*locator).send_keys(keys)
-
-    @allure.step('Клик на логотип самоката')
-    def click_on_logo_scooter(self):
-        self.click_on_element(BasePageLocators.SCOOTER_LOGO)
-    
-    @allure.step('Клик на логотип яндекса')
-    def click_on_logo_yandex(self):
-        self.click_on_element(BasePageLocators.YANDEX_LOGO)
 
     @allure.step('Переключение на открывшуюся через редирект вкладку')
     def switch_to_redirect_window(self):

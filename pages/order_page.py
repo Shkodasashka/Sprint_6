@@ -1,12 +1,13 @@
 import allure
 from pages.base_page import BasePage
+from locators.base_page_locators import BasePageLocators
 from locators.order_page_locators import OrderPageLocators
 
 
 class OrderPage(BasePage):
     @allure.step('Ожидание появления и поиск заголовка первой формы для заполнения заказа')
-    def wait_and_find_header_first_form_order(self):
-        self.wait_and_find_element(OrderPageLocators.HEADER_FIRST_FORM_ORDER)
+    def wait_header_first_form_order(self):
+        return self.wait_element(OrderPageLocators.HEADER_FIRST_FORM_ORDER)
 
     @allure.step('Клик на поле для ввода имени')
     def click_on_field_name_order(self):
@@ -57,8 +58,8 @@ class OrderPage(BasePage):
         self.click_on_element(OrderPageLocators.FURTHER_BUTTON)
 
     @allure.step('Ожидание появления и поиск заголовка второй формы для заполнения заказа')
-    def wait_and_find_header_second_form_order(self):
-        self.wait_and_find_element(OrderPageLocators.HEADER_SECOND_FORM_ORDER)
+    def wait_header_second_form_order(self):
+        return self.wait_element(OrderPageLocators.HEADER_SECOND_FORM_ORDER)
 
     @allure.step('Клик на поле ввода даты')
     def click_on_field_date_order(self):
@@ -97,16 +98,16 @@ class OrderPage(BasePage):
         self.click_on_element(OrderPageLocators.FINAL_ORDER_BUTTON)
 
     @allure.step('Ожидание появления окна подтверждения заказа')
-    def wait_and_find_header_confirmation_order(self):
-        self.wait_and_find_element(OrderPageLocators.HEADER_CONFIRMATION_ORDER)
+    def wait_header_confirmation_order(self):
+        return self.wait_element(OrderPageLocators.HEADER_CONFIRMATION_ORDER)
 
     @allure.step('Клик на кнопку подтверждения заказа')
     def click_on_confirmation_order_button(self):
         self.click_on_element(OrderPageLocators.CONFIRMATION_ORDER_BUTTON)
 
     @allure.step('Ожидание появления окна успешно сформированного заказа')
-    def wait_and_find_header_success_order(self):
-        self.wait_and_find_element(OrderPageLocators.CONFIRMATION_SUCCESS_ORDER)
+    def wait_header_success_order(self):
+        return self.wait_element(OrderPageLocators.CONFIRMATION_SUCCESS_ORDER)
 
     @allure.step('Клик на кнопку просмотра статуса заказа')
     def click_on_status_order_button(self):
@@ -114,7 +115,7 @@ class OrderPage(BasePage):
 
     @allure.step('Ввод данных в первую форму заказа самоката')
     def input_data_in_first_form(self, test_data):
-        self.wait_and_find_header_first_form_order()
+        self.wait_header_first_form_order()
         self.click_on_field_name_order()
         self.input_name_order(test_data)
         self.click_on_field_surname_order()
@@ -130,7 +131,7 @@ class OrderPage(BasePage):
 
     @allure.step('Ввод данных во вторую форму заказа самоката')
     def input_data_in_second_form(self, test_data):
-        self.wait_and_find_header_second_form_order()
+        self.wait_header_second_form_order()
         self.click_on_field_date_order()
         self.input_date_order(test_data)
         self.click_on_date_on_calendar()
@@ -140,3 +141,7 @@ class OrderPage(BasePage):
         self.click_on_field_comment_order()
         self.input_comment_order(test_data)
         self.click_on_final_order_button()
+
+    @allure.step('Клик на логотип самоката')
+    def click_on_logo_scooter(self):
+        self.click_on_element(BasePageLocators.SCOOTER_LOGO)

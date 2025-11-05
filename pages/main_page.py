@@ -31,5 +31,13 @@ class MainPage(BasePage):
         self.click_on_element(button_locator)
 
     @allure.step('Ожидание появления и поиск заголовка главной страницы')
-    def wait_and_find_header_of_main_page(self):
-        self.wait_and_find_element(MainPageLocators.header_title)
+    def wait_header_of_main_page(self):
+        return self.wait_element(MainPageLocators.header_title)
+
+    @allure.step('Клик на логотип яндекса')
+    def click_on_logo_yandex(self):
+        self.click_on_element(BasePageLocators.YANDEX_LOGO)
+    
+    @allure.step('Переключение с главной страницы на открывшуюся через редирект вкладку со странцией Дзена')
+    def switch_to_Dzen(self):
+        self.switch_to_redirect_window()
