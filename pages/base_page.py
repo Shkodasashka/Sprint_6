@@ -8,6 +8,22 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step('Открытие страницы в браузере')
+    def open_page(self, url):
+        self.driver.get(url)
+
+    @allure.step('Ожидание кликабельности элемента и клик на элемент')
+    def click_on_element(self, locator):
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(locator))
+        self.driver.find_element(*locator).click()
+
+    @allure.step('Нажатие на кнопку в случае ее отображения на странице')
+    def click_if_button_displayed(self, locator):
+        try:
+            self.click_on_element(locator)
+        except Exception:
+            pass
+
     @allure.step('Ожидание загрузки и поиск элемента')
     def wait_and_find_element(self, locator):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
@@ -17,11 +33,6 @@ class BasePage:
     def scroll_to_element(self, locator):
         element = self.wait_and_find_element(locator)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-
-    @allure.step('Ожидание кликабельности элемента и клик на элемент')
-    def click_on_element(self, locator):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(locator))
-        self.driver.find_element(*locator).click()
   
     @allure.step('Клик на скрытый элемент')
     def click_on_hidden_element(self, locator):

@@ -1,10 +1,19 @@
 import allure
+from data import url
 from pages.base_page import BasePage
+from locators.base_page_locators import BasePageLocators
 from locators.main_page_locators import MainPageLocators
 
 
 class MainPage(BasePage):
-   
+    @allure.step('Открытие главной страницы сервиса')
+    def open_mane_page(self):
+        self.open_page(url.main_page)
+
+    @allure.step('Клик на кнопку согласия использования куки в случае ее отображения на странице')
+    def cookie_consent(self):
+        self.click_if_button_displayed(BasePageLocators.ACCEPT_COOKIES_BUTTON)
+
     @allure.step('Скролл страницы до раздела с вопросами')
     def scroll_to_section_FAQ(self):
         self.scroll_to_element(MainPageLocators.header_FAQ)

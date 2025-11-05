@@ -15,6 +15,8 @@ class TestPositiveFlowOrderScooter:
                                                    [MainPageLocators.page_button_order, ORDER_DATA.test_data_user_2]])
     def test_postive_flow_order_scooter(self, driver, button, test_data):
         main_page = MainPage(driver)
+        main_page.open_mane_page()
+        main_page.cookie_consent()
         main_page.click_on_button_order(button)
         order_page = OrderPage(driver)
         order_page.wait_and_find_header_first_form_order()
