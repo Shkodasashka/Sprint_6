@@ -1,10 +1,8 @@
 import allure
 import pytest
-from data import ORDER_DATA, TITLE_DATA
+from data import ORDER_DATA
 from pages.order_page import OrderPage
 from pages.main_page import MainPage
-from pages.base_page import BasePage
-from pages.dzen_page import DzenPage
 from locators.main_page_locators import MainPageLocators
 
 
