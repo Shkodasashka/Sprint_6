@@ -111,3 +111,32 @@ class OrderPage(BasePage):
     @allure.step('Клик на кнопку просмотра статуса заказа')
     def click_on_status_order_button(self):
         self.click_on_element(OrderPageLocators.STATUS_ORDER_BUTTON)
+
+    @allure.step('Ввод данных в первую форму заказа самоката')
+    def input_data_in_first_form(self, test_data):
+        self.wait_and_find_header_first_form_order()
+        self.click_on_field_name_order()
+        self.input_name_order(test_data)
+        self.click_on_field_surname_order()
+        self.input_surname_order(test_data)
+        self.click_on_field_adress_order()
+        self.input_adress_order(test_data)
+        self.click_on_field_station_list_order()
+        self.input_station_list_order(test_data)
+        self.click_on_select_station_from_search()
+        self.click_on_field_telephone_order()
+        self.input_telephone_order(test_data)
+        self.click_on_button_crossing_next_form()
+
+    @allure.step('Ввод данных во вторую форму заказа самоката')
+    def input_data_in_second_form(self, test_data):
+        self.wait_and_find_header_second_form_order()
+        self.click_on_field_date_order()
+        self.input_date_order(test_data)
+        self.click_on_date_on_calendar()
+        self.click_on_field_time_order()
+        self.click_on_field_select_time_order()
+        self.click_on_colour_order()
+        self.click_on_field_comment_order()
+        self.input_comment_order(test_data)
+        self.click_on_final_order_button()
