@@ -23,7 +23,7 @@ class MainPageLocators:
     # Локатор секции с вопросами и ответами на главной странице
     header_FAQ = [By.XPATH, "//div[contains(text(),'Вопросы о важном')]"]
     # Локаторы кнопок заказать на главной странице
-    header_button_order = [By.XPATH, "//button[@class='Button_Button__ra12g']"] #кнопка в шапке главной страницы для перехода на страницу оформления заказа
-    page_button_order = [By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']"] #кнопка в центральной части главной страницы для перехода на страницу оформления заказа
+    header_button_order = [By.XPATH, "//div[contains(@class,'Header_Nav')]/button[contains(@class,'Button_Button')]"] #кнопка в шапке главной страницы для перехода на страницу оформления заказа
+    page_button_order = [By.XPATH, "//div[contains(@class,'Home_FinishButton')]/button[contains(@class,'Button_Button')]"] #кнопка в центральной части главной страницы для перехода на страницу оформления заказа
     # Локатор заголовка на главной странице
-    header_title = [By.XPATH, "//div[@class='Home_Header__iJKdX']"] #кнопка в шапке главной страницы для перехода на страницу оформления заказа
+    header_title = [By.XPATH, "//div[contains(@class,'Home_Header')]"] #заголовок центральной страницы
