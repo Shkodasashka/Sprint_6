@@ -3,6 +3,7 @@ import pytest
 from data import FAQ
 from pages.main_page import MainPage
 
+
 class TestMainPageFAQ:
     @allure.title('Проверка раздела "Вопросы о важном"')
     @allure.description('Проверка появления соответствующего ответа при нажатии на вопрос на главной странице')

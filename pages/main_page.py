@@ -30,7 +30,7 @@ class MainPage(BasePage):
     def click_on_button_order(self, button_locator):
         self.click_on_element(button_locator)
 
-    @allure.step('Ожидание появления и поиск заголовка главной страницы')
+    @allure.step('Ожидание появления заголовка главной страницы')
     def wait_header_of_main_page(self):
         return self.wait_element(MainPageLocators.header_title)
 

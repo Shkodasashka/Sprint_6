@@ -5,7 +5,7 @@ from locators.order_page_locators import OrderPageLocators
 
 
 class OrderPage(BasePage):
-    @allure.step('Ожидание появления и поиск заголовка первой формы для заполнения заказа')
+    @allure.step('Ожидание появления заголовка первой формы для заполнения заказа')
     def wait_header_first_form_order(self):
         return self.wait_element(OrderPageLocators.HEADER_FIRST_FORM_ORDER)
 
@@ -57,7 +57,7 @@ class OrderPage(BasePage):
     def click_on_button_crossing_next_form(self):
         self.click_on_element(OrderPageLocators.FURTHER_BUTTON)
 
-    @allure.step('Ожидание появления и поиск заголовка второй формы для заполнения заказа')
+    @allure.step('Ожидание появления заголовка второй формы для заполнения заказа')
     def wait_header_second_form_order(self):
         return self.wait_element(OrderPageLocators.HEADER_SECOND_FORM_ORDER)
 
